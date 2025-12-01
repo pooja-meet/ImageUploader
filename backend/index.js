@@ -17,8 +17,4 @@ const router = require('./router')
 
 app.use('/', router)
 
-app.get('/d', (req, res) => {
-    res.send("server is running...")
-})
-
 app.listen(3000, () => console.log(`server is running at http://localhost:3000`))
