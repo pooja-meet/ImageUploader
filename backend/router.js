@@ -27,6 +27,10 @@ if (!fs.existsSync(upload)) fs.mkdirSync(upload)
 
 const uploads = multer({ dest: './uploads/' })
 
+router.get('/', (req,res)=> {
+    res.send({msg:'server is running'})
+})
+
 router.post('/upload', uploads.single('avtar'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({
@@ -39,4 +43,5 @@ router.post('/upload', uploads.single('avtar'), (req, res) => {
         url: `http://localhost:3000/uploads/${req.file.filename}`
     })
 })
+
 module.exports = router
