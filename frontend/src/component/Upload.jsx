@@ -17,7 +17,7 @@ function Upload() {
         const form = new FormData();
         form.append('avtar', file);
 
-        const res = await fetch(`http://localhost:3000/upload`, {
+        const res = await fetch(`https://imageuploader-g3qq.onrender.com/upload`, {
             method: 'POST',
             body: form
         });
@@ -40,4 +40,5 @@ function Upload() {
         </>
     )
 }
+
 export default Upload
