@@ -6,7 +6,7 @@ function Images() {
   const [images, setImages] = useState([])
 
   const loadImages = async () => {
-    const res = await fetch(`http://localhost:3000/view`);
+    const res = await fetch(`https://imageuploader-g3qq.onrender.com/view`);
     const data = await res.json();
     setImages(data);
   };
@@ -35,3 +35,4 @@ function Images() {
   )
 }
 export default Images
+
