@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+     origin: 'https://imupload.netlify.app',
     method: 'GET,POST,DELETE,PUT',
 }))
 
@@ -18,3 +18,4 @@ const router = require('./router')
 app.use('/', router)
 
 app.listen(3000, () => console.log(`server is running at http://localhost:3000`))
+
