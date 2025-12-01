@@ -18,7 +18,7 @@ if (!fs.existsSync(upload)) fs.mkdirSync(upload)
         }
         const images = files.map(file => ({
             filename: file,
-            url: `http://localhost:3000/uploads/${file}`
+            url: `https://imupload.netlify.app/uploads/${file}`
         }))
         log(images)
         res.json(images)
@@ -40,8 +40,9 @@ router.post('/upload', uploads.single('avtar'), (req, res) => {
     res.send({
         msg: "Image uploaded successfully",
         filename: req.file.filename,
-        url: `http://localhost:3000/uploads/${req.file.filename}`
+        url: `https://imupload.netlify.app/uploads/${req.file.filename}`
     })
 })
 
 module.exports = router
+
